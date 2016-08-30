@@ -67,6 +67,16 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 # Articles
 
+## Article Resource
+
+Generic article information. By default, only public information is shared without any scopes. More detailed information or email can be requested with additional scopes.
+
+Fields | Description
+--------- | -----------
+id | article id
+title | article's title
+
+
 ## Get All Articles
 
 ```ruby
