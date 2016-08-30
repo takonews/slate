@@ -65,9 +65,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Articles
 
-## Get All Kittens
+## Get All Articles
 
 ```ruby
 require 'kittn'
@@ -116,7 +116,7 @@ let kittens = api.kittens.get();
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all articles.
 
 ### HTTP Request
 
@@ -132,6 +132,8 @@ available | true | If set to false, the result will include kittens that have al
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
+
+# Kittens
 
 ## Get a Specific Kitten
 
