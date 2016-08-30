@@ -164,9 +164,29 @@ curl <span class="s2">"api_endpoint_here"</span>
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-<h1 id="kittens">Kittens</h1>
+<h1 id="articles">Articles</h1>
 
-<h2 id="get-all-kittens">Get All Kittens</h2>
+<h2 id="article-resource">Article Resource</h2>
+
+<p>Generic article information. By default, only public information is shared without any scopes. More detailed information or email can be requested with additional scopes.</p>
+
+<table><thead>
+<tr>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>article id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>article&rsquo;s title</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-all-articles">Get All Articles</h2>
 <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
@@ -189,25 +209,25 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">ニュースのID</span><span class="w"> 
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TITLE"</span><span class="p">,</span><span class="w">                    </span><span class="err">//</span><span class="w"> </span><span class="err">ニュースのタイトル</span><span class="w">
+      </span><span class="nt">"news_site_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">ニュースサイトのID</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:.."</span><span class="p">,</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">記事のリンク</span><span class="w">
+      </span><span class="nt">"published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-20 9:00:00"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">rubyのdatetime型</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">ニュースのID</span><span class="w"> 
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TITLE"</span><span class="p">,</span><span class="w">                    </span><span class="err">//</span><span class="w"> </span><span class="err">ニュースのタイトル</span><span class="w">
+      </span><span class="nt">"news_site_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">ニュースサイトのID</span><span class="w">
+      </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:.."</span><span class="p">,</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">記事のリンク</span><span class="w">
+      </span><span class="nt">"published_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-21 9:00:00"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">rubyのdatetime型</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves all articles.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -237,6 +257,8 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
+
+<h1 id="kittens">Kittens</h1>
 
 <h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
 <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
