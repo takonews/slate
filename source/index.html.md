@@ -98,22 +98,22 @@ let kittens = api.kittens.get();
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+ [
+    {
+      "id": 1, // ニュースのID 
+      "title": "TITLE",                    // ニュースのタイトル
+      "news_site_id": 5,                  // ニュースサイトのID
+      "url": "http:..",             // 記事のリンク
+      "published_at": "2015-02-20 9:00:00" // rubyのdatetime型
+    },
+    {
+      "id": 2, // ニュースのID 
+      "title": "TITLE",                    // ニュースのタイトル
+      "news_site_id": 3,                  // ニュースサイトのID
+      "url": "http:..",             // 記事のリンク
+      "published_at": "2015-02-21 9:00:00" // rubyのdatetime型
+    }
+  ]
 ```
 
 This endpoint retrieves all articles.
