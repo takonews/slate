@@ -142,14 +142,14 @@ curl <span class="s2">"api_endpoint_here"</span>
 <p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Takonews uses Basic authentication to allow access to the API. </p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Takonews expects for ID/PASS to be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>ID/PASS</code> with your personal ID/PASS.
 </aside>
 
 <h1 id="articles">Articles</h1>
@@ -171,6 +171,26 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>title</td>
 <td>article&rsquo;s title</td>
+</tr>
+<tr>
+<td>news_site_id</td>
+<td>news site&rsquo;s id</td>
+</tr>
+<tr>
+<td>url</td>
+<td>article&rsquo;s url</td>
+</tr>
+<tr>
+<td>title</td>
+<td>article&rsquo;s title</td>
+</tr>
+<tr>
+<td>full_text</td>
+<td>article&rsquo;s full text</td>
+</tr>
+<tr>
+<td>published_at</td>
+<td>published_at</td>
 </tr>
 </tbody></table>
 
