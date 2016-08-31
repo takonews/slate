@@ -39,14 +39,14 @@ let api = kittn.authorize('meowmeowmeow');
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Takonews uses Basic authentication to allow access to the API. 
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Takonews expects for ID/PASS to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>ID/PASS</code> with your personal ID/PASS.
 </aside>
 
 # Articles
@@ -59,7 +59,11 @@ Fields | Description
 --------- | -----------
 id | article id
 title | article's title
-
+news_site_id | news site's id
+url | article's url
+title | article's title
+full_text | article's full text
+published_at | published_at
 
 ## Get All Articles
 
