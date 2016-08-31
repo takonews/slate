@@ -68,8 +68,7 @@ published_at | published_at
 ## Get All Articles
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl --user tako:nasu "http://<hostname>/api/v2/articles"
 ```
 
 ```go
