@@ -195,8 +195,7 @@ You must replace <code>ID/PASS</code> with your personal ID/PASS.
 </tbody></table>
 
 <h2 id="get-all-articles">Get All Articles</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
+<pre class="highlight shell"><code>curl --user tako:nasu <span class="s2">"http://&lt;hostname&gt;/api/v2/articles"</span>
 </code></pre>
 <pre class="highlight go"><code><span class="k">const</span><span class="x"> </span><span class="n">kittn</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="n">require</span><span class="p">(</span><span class="err">'</span><span class="n">kittn</span><span class="err">'</span><span class="p">);</span><span class="x">
 
@@ -241,14 +240,19 @@ You must replace <code>ID/PASS</code> with your personal ID/PASS.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>fileds</td>
+<td>id,title,news_site_id,url</td>
+<td>filter output fields.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>start-date</td>
+<td>0:00</td>
+<td>format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>end-date</td>
+<td>24:00</td>
+<td>format: YYYY-MM-DD</td>
 </tr>
 </tbody></table>
 
@@ -256,14 +260,7 @@ You must replace <code>ID/PASS</code> with your personal ID/PASS.
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-<h1 id="kittens">Kittens</h1>
-
-<h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
+<h2 id="show-article">Show Article</h2>
 <pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
@@ -271,11 +268,6 @@ Remember — a happy kitten is an authenticated kitten!
 </code></pre>
 <pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
   -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-<pre class="highlight javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre>
 
 <blockquote>
@@ -290,7 +282,7 @@ Remember — a happy kitten is an authenticated kitten!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint retrieves a specific kitten.</p>
+<p>This endpoint retrieves a specific article.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
