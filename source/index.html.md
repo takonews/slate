@@ -156,3 +156,15 @@ This endpoint retrieves a specific article.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
+
+# NewsSites
+
+## NewsSite Resource
+
+Generic article information. By default, only public information is shared without any scopes. More detailed information or email can be requested with additional scopes.
+
+Fields | Description
+--------- | -----------
+id | news site id
+name | news site's name
+url | news site's url
