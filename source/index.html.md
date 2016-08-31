@@ -109,8 +109,9 @@ This endpoint retrieves all articles.
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+fileds | id,title,news_site_id,url | filter output fields.
+start-date | 0:00  | format: YYYY-MM-DD
+end-date | 24:00 | format: YYYY-MM-DD
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
