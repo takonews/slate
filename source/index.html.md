@@ -25,25 +25,13 @@ We have language bindings in Shell and Go! You can view code examples in the dar
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
+```go
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
@@ -75,26 +63,12 @@ title | article's title
 
 ## Get All Articles
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
 ```shell
 curl "http://example.com/api/kittens"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
+```go
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
@@ -106,18 +80,18 @@ let kittens = api.kittens.get();
 ```json
  [
     {
-      "id": 1, // ニュースのID 
-      "title": "TITLE",                    // ニュースのタイトル
-      "news_site_id": 5,                  // ニュースサイトのID
-      "url": "http:..",             // 記事のリンク
-      "published_at": "2015-02-20 9:00:00" // rubyのdatetime型
+      "id": 1,
+      "title": "TITLE", 
+      "news_site_id": 5,         
+      "url": "http:..",           
+      "published_at": "2015-02-20 9:00:00"
     },
     {
-      "id": 2, // ニュースのID 
-      "title": "TITLE",                    // ニュースのタイトル
-      "news_site_id": 3,                  // ニュースサイトのID
-      "url": "http:..",             // 記事のリンク
-      "published_at": "2015-02-21 9:00:00" // rubyのdatetime型
+      "id": 2, 
+      "title": "TITLE",                  
+      "news_site_id": 3,           
+      "url": "http:..",      
+      "published_at": "2015-02-21 9:00:00"
     }
   ]
 ```
